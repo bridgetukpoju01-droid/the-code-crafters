@@ -1,0 +1,30 @@
+Number Converter CLI
+
+This is a small Go program that changes numbers between decimal, binary, and hex.
+
+How to Run
+go run main.go
+How to Use
+
+Type commands like this:
+
+convert <number> <base>
+<number> – the number you want to convert
+<base> – type hex, bin, or dec
+Examples
+convert 1E hex   → Decimal: 30
+convert 10 bin   → Decimal: 2
+convert 255 dec  → Binary: 11111111, Hex: FF
+convert -15 dec  → Binary: -1111, Hex: -F
+If input is wrong, the program shows an error.
+Continue or Quit
+
+After each conversion, it asks:
+
+Do you want to continue? Type 'yes' to continue or anything else to quit:
+Type yes → do another conversion
+Type anything else → exit the program
+
+Author
+
+Made by [Bridget ukpoju]

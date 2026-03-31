@@ -27,10 +27,7 @@ import (
 	"strconv"
 	"strings"
 )
-func binConv() {
-	
 
-}
 
 func main() {
 start:
@@ -48,7 +45,7 @@ start:
 	}
 
 	if option != "1" && option != "2" && option != "3" && option != "help" && option != "quit" {
-		fmt.Println("C the correct format value")
+		fmt.Println("Choose the correct format value")
 	}
 	if option == "help" {
 		fmt.Println("hex convert from decimal to hexadecimal")

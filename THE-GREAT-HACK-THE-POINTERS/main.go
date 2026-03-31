@@ -26,7 +26,63 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"bufio"
+	"os"
 )
+
+
+var command string
+
+func str() {
+	fmt.Print("Enter a text: ")
+	line := bufio.NewScanner(os.Stdin)
+	if line.Scan() {
+		line := line.Text()
+		if len(line) > 0 {
+			fmt.Println("Input Operation!")
+			var operation string
+			_, err := fmt.Scan(&operation)
+			if err == nil {
+				if operation == "upper" {
+					fmt.Println(strings.ToUpper(line))
+				} else if operation == "lower" {
+					fmt.Println(strings.ToLower(line))
+				} else if operation == "cap" {
+					nval := strings.Fields(line)
+					for i := 0; i <= len(nval)-1; i++ {
+						low := strings.ToLower(nval[i])
+						title := strings.ToUpper(string(low[0])) + string(low[1:])
+						fmt.Print(title, " ")
+						
+					}
+				} else if operation == "title" {
+					var small = []string{"a", "an", "the", "and", "but",
+						"or", "for", "nor", "on", "at", "to", "by", "in",
+						"of", "up", "as", "is", "it"}
+					nval := strings.Fields(line)
+					for i := 0; i <= len(nval)-1; i++ {
+						for j := 0; j <= len(small)-1; j++ {
+							
+						}
+					}
+				} else {
+					fmt.Println("Invalid Operation! ")
+				}
+			} else {
+				fmt.Println("An error occured during scan")
+			}
+		} else {
+			fmt.Println("Does not accept an empty input")
+		}
+	} else {
+		fmt.Println("An error occured while reading input!")
+	}
+}
+
+
+
+
+
 
 
 func cal() {
@@ -112,8 +168,9 @@ func main() {
 		var mainOption string
 		fmt.Println("\n--- Main Menu ---")
 		fmt.Println("Select an application to run:")
-		fmt.Println("(C)onverter: Number base conversions")
-		fmt.Println("(A)rithmetic: Basic math operations")
+		fmt.Println("(C)converter: Number base conversions")
+		fmt.Println("(A)arithmetic: Basic math operations")
+		fmt.Println("(s)string converter")
 		fmt.Println("(Q)uit: Exit the program")
 		fmt.Scan(&mainOption)
 		
@@ -127,7 +184,9 @@ func main() {
 			cal()
 		} else if mainOption == "a" || mainOption == "arithmetic" {
 			runArithmeticCalculator() 
-		} else {
+		} else if mainOption == "s" {
+			str()
+		}else {
 			fmt.Println("Invalid option. Please choose 'C', 'A', or 'Q'.")
 		}
 	}
@@ -140,59 +199,5 @@ func main() {
 
 
 
-package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strings"
-)
 
-var command string
-
-func main() {
-	fmt.Print("Enter a text: ")
-	line := bufio.NewScanner(os.Stdin)
-	if line.Scan() {
-		line := line.Text()
-		if len(line) > 0 {
-			fmt.Println("Input Operation!")
-			var operation string
-			_, err := fmt.Scan(&operation)
-			if err == nil {
-				if operation == "upper" {
-					fmt.Println(strings.ToUpper(line))
-				} else if operation == "lower" {
-					fmt.Println(strings.ToLower(line))
-				} else if operation == "cap" {
-					nval := strings.Fields(line)
-					for i := 0; i <= len(nval)-1; i++ {
-						low := strings.ToLower(nval[i])
-						title := strings.ToUpper(string(low[0])) + string(low[1:])
-						fmt.Print(title, " ")
-						
-					}
-				} else if operation == "title" {
-					var small = []string{"a", "an", "the", "and", "but",
-						"or", "for", "nor", "on", "at", "to", "by", "in",
-						"of", "up", "as", "is", "it"}
-					nval := strings.Fields(line)
-					for i := 0; i <= len(nval)-1; i++ {
-						for j := 0; j <= len(small)-1; j++ {
-							
-						}
-					}
-				} else {
-					fmt.Println("Invalid Operation! ")
-				}
-			} else {
-				fmt.Println("An error occured during scan")
-			}
-		} else {
-			fmt.Println("Does not accept an empty input")
-		}
-	} else {
-		fmt.Println("An error occured while reading input!")
-	}
-}

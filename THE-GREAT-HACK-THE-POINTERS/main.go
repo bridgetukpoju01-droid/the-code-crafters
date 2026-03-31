@@ -100,16 +100,15 @@ start:
 
 }
 func runArithmeticCalculator() {
-	// This function needs the logic from your first snippet.
-	// We will simulate it here as the code was commented out in your prompt.
-	// You can expand this with the full logic.
+	
 	fmt.Println("\n--- Arithmetic Calculator Menu ---")
 	fmt.Println("This is where the add, sub, div, mul, pow logic would go.")
 	fmt.Println("You would use fmt.Scan to read user input for operation and numbers.")
+
 }
 
 func main() {
-	for { // Main program loop
+	for { 
 		var mainOption string
 		fmt.Println("\n--- Main Menu ---")
 		fmt.Println("Select an application to run:")
@@ -118,16 +117,16 @@ func main() {
 		fmt.Println("(Q)uit: Exit the program")
 		fmt.Scan(&mainOption)
 		
-		// Use strings.ToLower for flexible input handling
+	
 		mainOption = strings.ToLower(mainOption)
 
 		if mainOption == "q" || mainOption == "quit" {
 			fmt.Println("Thanks for using the combined program. Goodbye!")
-			break // Exit the main loop and end the program
+			break 
 		} else if mainOption == "c" || mainOption == "converter" {
 			cal()
 		} else if mainOption == "a" || mainOption == "arithmetic" {
-			runArithmeticCalculator() // Call the arithmetic function
+			runArithmeticCalculator() 
 		} else {
 			fmt.Println("Invalid option. Please choose 'C', 'A', or 'Q'.")
 		}

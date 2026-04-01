@@ -116,3 +116,21 @@ the things i now see in a different perspective are that:
 
 ## my thoughts and experiences from the project
 it was hard and had complex errors and it refused to compile but after some hours of intense struggle the code finally compiled but another error appeared and it had to be resolved quickly cause it was a dying munit the error was that the code refused to transform to lowwer complectly but after crosschecking the work i saw i did not call in my tolowercase function , after that i pushed my code
+
+
+#  AZI BULUS  - Built the Main.go
+
+the main.go handles all other function calls and serves as the brain controling the text processing system we built.
+
+
+## my contribution
+I deployed my problem solving skills to arrange the separately built functions into a compilable program that depends on the other features built by my teamates to work.
+
+## Today's hardest problem 
+for me was calling other functions from another file and ensuring that they work hand in hand to execute the text processing operation
+
+## Things i now see in a different perspective
+
+> Working with a team whose work depends on how accurately i can think is actually a daunting responsibility that requires me to think straight enough to surmount roadblocks.
+
+> Once a team understands eachother, there's no limit to the heights they can go.

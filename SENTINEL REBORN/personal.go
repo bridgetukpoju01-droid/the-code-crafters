@@ -72,3 +72,37 @@ func ToUpper(input string) string {
     return strings.Join(words, " ")
 
 }
+
+func ToLower(input string) string {
+    t := "(low)"
+
+    words := strings.Fields(input)
+
+    for i := 0; i < len(words); i++ {
+        w := words[i]
+
+        switch {
+        case w == "(low)":
+
+            if w == t && i > 0 {
+                words[i-1] = strings.ToLower(string(words[i-1]))
+                words = append(words[:i], words[i+1:]...)
+
+            }
+
+        case strings.HasPrefix(words[i], "(low,"):
+
+            num := strings.TrimRight(words[i+1], ")")
+            n, _ := strconv.Atoi(num)
+
+            for j := i - n; j < i; j++ {
+                words[j] = strings.ToLower(string(words[j]))
+                words = append(words[:i], words[i+1:]...)
+            }
+
+        }
+
+    }
+    return strings.Join(words, " ")
+
+}

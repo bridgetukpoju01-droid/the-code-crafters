@@ -134,3 +134,23 @@ for me was calling other functions from another file and ensuring that they work
 > Working with a team whose work depends on how accurately i can think is actually a daunting responsibility that requires me to think straight enough to surmount roadblocks.
 
 > Once a team understands eachother, there's no limit to the heights they can go.
+
+
+# ATTAH SUNDAY 
+### CREATING THE CAPITALIZE FUNCTION 
+I am in the pointer's squad and writing this function went a whole lot of thinking and 
+structuring, at first i do not know how to start but now after more thinking and more 
+reading and studying i discover how to it, but at the end was unbelivable
+
+# what the file is all about:
+the file is all about capitalizing the first letter in a word in a sentence and to return all the words with only the the first letter in uppercase.
+
+# NOW 
+i now know my mistake and to sit up to get a specific task done on time and to make sure
+it is runing fine.
+# PROBLEM 
+the problem i discover and felt is how to write a function that upper case all the word's first letter in a sentence of more than one.
+
+/THANKYOU/
+
+

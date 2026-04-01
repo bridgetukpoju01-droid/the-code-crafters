@@ -1,10 +1,4 @@
-package main
 
-import (
-	"fmt"
-	"strconv"
-	"strings"
-)
 
 func Allhex(value string) string {
 
@@ -26,19 +20,17 @@ func Allhex(value string) string {
 }
 
 func Quote(s string) string {
-	words := strings.Split(s, "'") 
+	words := strings.Split(s, "'")
 	result := "  "
 	for i := 0; i < len(words); i++ {
 		if i%2 == 1 {
-		   result += "'" + strings.TrimSpace(words[i]) + "'" 
+			result += "'" + strings.TrimSpace(words[i]) + "'"
 		} else {
 			result += words[i]
 		}
 	}
 	return result
 }
-
-
 
 func BinToDecimal(text string) string {
 	words := strings.Fields(text)
@@ -58,4 +50,25 @@ func BinToDecimal(text string) string {
 	return strings.Join(result, " ")
 }
 
+func fixPunctuation(text string) string {
+	reEllipsis := regexp.MustCompile(`\.\s*\.\s*\.`)
+	text = reEllipsis.ReplaceAllString(text, "...")
 
+	reBefore := regexp.MustCompile(`\s+([.,!?;:])`)
+	text = reBefore.ReplaceAllString(text, "$1")
+
+	reAfter := regexp.MustCompile(`([.,!?;:])([^\s.,!?;:])`)
+	text = reAfter.ReplaceAllString(text, "$1 $2")
+
+	reQuotes := regexp.MustCompile(`'\s*(.*?)\s*'`)
+	text = reQuotes.ReplaceAllString(text, "'$1'")
+
+	reSpaces := regexp.MustCompile(`\s+`)
+	text = reSpaces.ReplaceAllString(text, " ")
+
+	return strings.TrimSpace(text)
+}
+
+func main() {
+	fmt.Println(fixPunctuation(("Punctuation tests are    ... kinda boring  , do you think?")))
+}

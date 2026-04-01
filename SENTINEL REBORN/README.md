@@ -28,3 +28,37 @@ this is a simple GO programme that finds (hex) in a sentence, takes the word bef
 i didn't encounter any major error just few misplacement and wrong lines. i was able to fix it by debugging my errors. and i was able to help others fix few minor error.
 i came in this morning felling it was diffcult to build GO RELOADED in a week, but we did it as a team and built it in few hours.
 
+
+
+# GIFT MAKOLO
+# I handle the punctuationaspect in my group (The pointers).
+my contribution was to make sure the code runs well be it when there is extra space it removes it, and where no space it makes 
+space if necerssary.
+
+## What it fixes
+* Removes extra spaces
+* Joins broken dots into `...`
+* Removes spaces before punctuation (like `, . ? !`)
+* Adds missing spaces after punctuation
+* Cleans up spacing inside quotes
+	## FOR INSTANCE
+	* when you do : go run main.go
+Input will be:
+`Punctuation tests are    ... kinda boring  , do you think?`
+
+Output:
+`Punctuation tests are... kinda boring, do you think?`
+
+It takes messy, spaced-out text and makes it clean and readable automatically.
+ ## WHAT I ENCOURTED 
+ * failed code
+ * errors
+ * edge cases
+ * wrong line of misplce code
+	# HOW I FIXED IT 
+	I debuged it, tried many edge cases gave my legend when i couldnt find the problm after several attempts, 
+	 i was able to  fix all encoutered problms
+	  #one thing you understand now that
+      you did not understand this morning
+	i didnt know punctuation can be coded in differnt ways such as the "bool and strings" ways but now i can do both 
+	this is somthing i did not know in the morning  

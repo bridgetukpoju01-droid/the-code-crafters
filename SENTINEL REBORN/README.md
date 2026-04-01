@@ -79,7 +79,7 @@ i figuered out the step by step function names and types to begin with and while
 ## One thing you found hardest today
 the one thing i found hard today was the edge case that didnt run and that broke down my program.
 
-# One thing you understand now that you did not understand this morning:
+## One thing you understand now that you did not understand this morning:
 
 i understood how debuging works, my problem increased and when i checked i was able to dictate the number line where that problem was.
  

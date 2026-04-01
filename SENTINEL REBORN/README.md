@@ -82,4 +82,37 @@ the one thing i found hard today was the edge case that didnt run and that broke
 ## One thing you understand now that you did not understand this morning:
 
 i understood how debuging works, my problem increased and when i checked i was able to dictate the number line where that problem was.
- 
+
+
+ #  Enock Victor - Fixed Articles
+
+my function handles the cases where there is grammar irregularity e.g a hour, an book, a egg and changes
+> "a" to "an" if it ever appears before a valid vowel or silent "h" and
+
+> "an" to "a" if it ever appears before a valid consonant.
+
+## how to run with examples
+to run it, you place your messy text in the file named input.txt and then you run the following commands on the command line
+> go run . input.txt output.txt
+
+## my contribution
+was basically to translate my ideation of how to solve the problem into a workable feature that can actually provide the required results.
+
+## Today's hardest problem 
+for me was building the fuction as a feature that is to partner with other features built by my able team members as a system to effectively handle messy input and refine it into actual readable text.
+
+## Summary of today's understanding
+the things i now see in a different perspective are that:
+> Working as a team is actually different from working alone. 
+
+> When building a feature of an app or any system that is intended to handle problems, i am have at least a basic understanding of how my own code will affect the other features.
+
+
+# Enenche Dominion - upper and lower cases
+
+## what i contributed in the project 
+
+> i handled the upper and lower case in my code 
+
+## my thoughts and experiences from the project
+it was hard and had complex errors and it refused to compile but after some hours of intense struggle the code finally compiled but another error appeared and it had to be resolved quickly cause it was a dying munit the error was that the code refused to transform to lowwer complectly but after crosschecking the work i saw i did not call in my tolowercase function , after that i pushed my code

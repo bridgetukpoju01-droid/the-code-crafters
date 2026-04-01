@@ -153,13 +153,3 @@ the problem i discover and felt is how to write a function that upper case all t
 
 /THANKYOU/
 
-
-func cap(words string, i int) {
-	if words[i] == "(cap)" && i > 0 {
-		words[i-1] = capitalize(words[i-1])
-		words[i] = ""
-	} else if strings.HasPrefix(words[i], "(cap,") && i+1 < len(words) {
-		applyToPrevious(words, i, capitalize)
-	}
-}
-

@@ -39,70 +39,47 @@ func Quote(s string) string {
 }
 
 
-func ToUpper(input string) string {
-    t := "(up)"
+func toUppertoLower(text string) string {
+	words := strings.Fields(text)
+	result := []string{}
 
-    words := strings.Fields(input)
+	for i := 0; i < len(words); i++ {
+		w := words[i]
 
-    for i := 0; i < len(words); i++ {
-        w := words[i]
+		
+		if strings.HasPrefix(w, "(") {
+			marker := w
+		
+			for !strings.HasSuffix(marker, ")") && i+1 < len(words) {
+				i++
+				marker += " " + words[i]
+			}
 
-        switch {
-        case w == "(up)":
+			marker = strings.TrimSuffix(strings.TrimPrefix(marker, "("), ")")
+			parts := strings.Split(marker, ",")
+			action := strings.TrimSpace(parts[0])
+			count := 1
+			if len(parts) == 2 {
+				if n, err := strconv.Atoi(strings.TrimSpace(parts[1])); err == nil {
+					count = n
+				}
+			}
 
-            if w == t && i > 0 {
-                words[i-1] = strings.ToUpper(string(words[i-1]))
-                words = append(words[:i], words[i+1:]...)
+			for j := len(result) - count; j < len(result); j++ {
+				if j >= 0 {
+					switch action {
+					case "up":
+						result[j] = strings.ToUpper(result[j])
+					case "low":
+						result[j] = strings.ToLower(result[j])
+					}
+				}
+			}
+			continue
+		}
 
-            }
+		result = append(result, w)
+	}
 
-        case strings.HasPrefix(words[i], "(up,"):
-
-            num := strings.TrimRight(words[i+1], ")")
-            n, _ := strconv.Atoi(num)
-
-            for j := i - n; j < i; j++ {
-                words[j] = strings.ToUpper(string(words[j]))
-                words = append(words[:i], words[i+1:]...)
-            }
-
-        }
-
-    }
-    return strings.Join(words, " ")
-
-}
-
-func ToLower(input string) string {
-    t := "(low)"
-
-    words := strings.Fields(input)
-
-    for i := 0; i < len(words); i++ {
-        w := words[i]
-
-        switch {
-        case w == "(low)":
-
-            if w == t && i > 0 {
-                words[i-1] = strings.ToLower(string(words[i-1]))
-                words = append(words[:i], words[i+1:]...)
-
-            }
-
-        case strings.HasPrefix(words[i], "(low,"):
-
-            num := strings.TrimRight(words[i+1], ")")
-            n, _ := strconv.Atoi(num)
-
-            for j := i - n; j < i; j++ {
-                words[j] = strings.ToLower(string(words[j]))
-                words = append(words[:i], words[i+1:]...)
-            }
-
-        }
-
-    }
-    return strings.Join(words, " ")
-
+	return strings.Join(result, " ")
 }

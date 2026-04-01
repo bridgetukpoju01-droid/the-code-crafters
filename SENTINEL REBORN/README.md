@@ -1,4 +1,16 @@
+# PROJECT SENTINEL REBORN - Text Editor/ processor
 
+## Description
+
+    This project is a simple text completion/editing/auto-correction tool written in Go.
+
+    The program reads a text file, applies several transformations to the content, and writes the modified result to a new file.
+
+    It follows clean code practices and modular structure .
+
+## Usage
+
+    go run . sample.txt result.txt
 
 
  ## AMINA OTEIKWU - BinToDecimal

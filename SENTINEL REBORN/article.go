@@ -33,7 +33,7 @@ func articleA(text string) string {
 			if words[i] == "An" {
 				words[i] = "A"
 			} else {
-				words[i] = "a"
+				words[i] = "a" .
 			}
 		}
 	}

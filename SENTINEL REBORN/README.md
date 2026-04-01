@@ -19,7 +19,7 @@
 	fmt.Println(BinToDecimal("bad 12 (bin) input"))  = bad 12 input
 
 
-# BRIDGET UKPOJU
+# BRIDGET UKPOJU - HEX TO DECIMAL CONVERTER
 
 ## HEX TO DECIMAL CONVERTER(GO) (my personal contribution to the project)
 this is a simple GO programme that finds (hex) in a sentence, takes the word before it as a hexadecimal number, converts it to decimal, replaces it and remove (hex).from my example "i have 1E (hex) file" becomes (i have 30 file).if the value is valid , it stays the same,but (hex) is still removed.the programis mainly for practicing string handling and number conversion in GO.
@@ -30,8 +30,8 @@ i came in this morning felling it was diffcult to build GO RELOADED in a week, b
 
 
 
-# GIFT MAKOLO
-# I handle the punctuationaspect in my group (The pointers).
+# GIFT MAKOLO - Fix Punctuation
+# I handle the punctuation aspect in my group (The pointers).
 my contribution was to make sure the code runs well be it when there is extra space it removes it, and where no space it makes 
 space if necerssary.
 

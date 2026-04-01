@@ -56,7 +56,7 @@ It takes messy, spaced-out text and makes it clean and readable automatically.
  * edge cases
  * wrong line of misplce code
 	# HOW I FIXED IT 
-	I debuged it, tried many edge cases gave my legend when i couldnt find the problm after several attempts, 
+	I debuged it, tried many edge cases gave my legend when i couldnt find the problem after several attempts, 
 	 i was able to  fix all encoutered problms
 	  #one thing you understand now that
       you did not understand this morning

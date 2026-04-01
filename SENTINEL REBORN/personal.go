@@ -25,7 +25,15 @@ func Allhex(value string) string {
 	return strings.Join(words, " ")
 }
 
-func main() {
-	fmt.Println(Allhex("i have 1E (hex) file"))
-	fmt.Println(Allhex("ineed FF (hex) mango"))
+func Quote(s string) string {
+	words := strings.Split(s, "'") 
+	result := "  "
+	for i := 0; i < len(words); i++ {
+		if i%2 == 1 {
+		   result += "'" + strings.TrimSpace(words[i]) + "'" 
+		} else {
+			result += words[i]
+		}
+	}
+	return result
 }

@@ -37,3 +37,25 @@ func Quote(s string) string {
 	}
 	return result
 }
+
+
+
+func BinToDecimal(text string) string {
+	words := strings.Fields(text)
+	var result []string
+	for i := 0; i < len(words); i++ {
+
+		if words[i] == "(bin)" && i > 0 {
+			value := words[i-1]
+			n, err := strconv.ParseInt(value, 2, 64)
+			if err == nil {
+				result[len(result)-1] = strconv.FormatInt(n, 10)
+			}
+			continue
+		}
+		result = append(result, words[i])
+	}
+	return strings.Join(result, " ")
+}
+
+

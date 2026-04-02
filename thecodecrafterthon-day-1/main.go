@@ -51,11 +51,13 @@ func main() {
 			fmt.Println("Enter the second number")
 			fmt.Scanln(&b)
 			if b != 0 {
-				fmt.Println("a,b")
+				answer := division(a, b)
+				fmt.Println(answer)
 			}
 			if b == 0 {
 				fmt.Println("cannot divide by 0 :")
 			}
+
 		case "3":
 			fmt.Println("Enter the first number")
 			fmt.Scanln(&a)

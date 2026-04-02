@@ -1,0 +1,6 @@
+This project is a simple commandline calculator written in Go. It allows users to perform basic arithmetic operations like addition, subtraction, multiplication, and division. When the program starts, it shows a menu where the user chooses an operation by entering a number. After selecting an option, the user is asked to enter two numbers, and the program displays the result. The calculator keeps running in a loop until the user chooses to quit. It also includes a help option that reminds users of the available operations. The program handles division safely by checking if the second number is zero to avoid errors. This project demonstrates basic Go concepts such as functions, loops, conditionals, and user input.
+
+AUTHOR
+[bridgetukpoju]
+date: 02-04-2026
+

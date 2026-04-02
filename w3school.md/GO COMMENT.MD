@@ -1,0 +1,3 @@
+## GO COMMENT
+
+In Go, comments are used to explain code, make it more readable, or temporarily prevent code from executing. Single-line comments start with `//` and continue to the end of the line, while multi-line comments start with `/*` and end with `*/`, allowing the comment to span several lines. For example, `// this is a comment` is a single-line comment, and anything between `/*` and `*/` is ignored by the compiler. Comments are not executed, so they are useful for documenting code or testing alternative code without deleting it. Typically, short explanations use `//`, while longer explanations use `/* ... */`.

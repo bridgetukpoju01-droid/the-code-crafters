@@ -1,0 +1,26 @@
+1. **What is a function in Go?**
+   A function is a block of code that performs a specific task and can be reused in your program.
+
+2. **How to create a function?**
+   Use the `func` keyword, followed by the function name and parentheses `()`.
+
+3. **What are parameters?**
+   Parameters are like inputs that the function takes, defined inside the parentheses.
+
+4. **How to call a function?**
+   To run the function, you write its name followed by parentheses.
+
+5. **Return values from a function:**
+   Functions can return values using the `return` keyword, which allows you to pass in data, process it, and get a result back.
+
+6. **Example:**
+   If you want to add two numbers, create a function that takes two numbers, adds them, and returns the result.
+
+7. **Multiple return values:**
+   Go functions can return multiple values, which makes them flexible.
+
+8. **Recursion:**
+   A function can call itself (recursion) until a specified stopping condition is met.
+
+9. **Why use functions?**
+   Functions help make your code cleaner, easier to manage, and avoid repetition, improving overall efficiency.

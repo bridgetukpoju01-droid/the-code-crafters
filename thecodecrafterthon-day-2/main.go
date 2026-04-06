@@ -12,7 +12,8 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	for {
-		fmt.Print("Type your command: ")
+		fmt.Print("Welcome to Bridget's world. Type your command (e.g., convert FF hex): ")
+
 		if !scanner.Scan() {
 			break
 		}
@@ -24,14 +25,14 @@ func main() {
 			continue
 		}
 
-		if input == "quit" {
+		if strings.ToLower(input) == "quit" {
 			fmt.Println("Goodbye!")
 			break
 		}
 
 		parts := strings.Fields(input)
 
-		if len(parts) != 3 || parts[0] != "convert" {
+		if len(parts) != 3 || strings.ToLower(parts[0]) != "convert" {
 			fmt.Println("Invalid command format. Use: convert value base")
 			continue
 		}
@@ -50,12 +51,14 @@ func main() {
 			fmt.Println("Unsupported base. Use hex, bin, or dec")
 		}
 
-		
-		fmt.Println("Are you still interested in more conversion? \nType 'yes' to continue or anything else to quit:")
-		var name string
-		fmt.Scan(&name)
+		fmt.Println("\nType 'yes' to continue or anything else to quit:")
 
-		if name != "yes" {
+		if !scanner.Scan() {
+			break
+		}
+
+		answer := strings.TrimSpace(scanner.Text())
+		if strings.ToLower(answer) != "yes" {
 			fmt.Println("Goodbye!")
 			break
 		}
@@ -69,6 +72,7 @@ func handleHex(value string) {
 		return
 	}
 	fmt.Printf("Decimal: %d\n", num)
+	fmt.Printf("Binary:  %b\n", num)
 }
 
 func handleBin(value string) {
@@ -85,6 +89,7 @@ func handleBin(value string) {
 		return
 	}
 	fmt.Printf("Decimal: %d\n", num)
+	fmt.Printf("Hex:     %X\n", num)
 }
 
 func handleDec(value string) {
@@ -94,6 +99,6 @@ func handleDec(value string) {
 		return
 	}
 
-	fmt.Printf("Binary:  %b\n", num)
-	fmt.Printf("Hex:     %X\n", num)
+	fmt.Printf("Binary: %b\n", num)
+	fmt.Printf("Hex:    %X\n", num)
 }

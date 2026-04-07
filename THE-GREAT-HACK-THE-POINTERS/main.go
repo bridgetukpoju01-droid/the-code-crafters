@@ -23,13 +23,13 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"slices"
 	"strconv"
 	"strings"
-	"bufio"
-	"os"
 )
-
 
 var command string
 
@@ -39,34 +39,64 @@ func str() {
 	if line.Scan() {
 		line := line.Text()
 		if len(line) > 0 {
-			fmt.Println("Input Operation!")
+			fmt.Print("Select Operation!\n1. Uppercase\n2. Lowercase\n3. Capitalize\n4. Title Case\n5. Snakecase\n6. Reverse\n>>>")
 			var operation string
 			_, err := fmt.Scan(&operation)
 			if err == nil {
-				if operation == "upper" {
+				if operation == "1" {
 					fmt.Println(strings.ToUpper(line))
-				} else if operation == "lower" {
+				} else if operation == "2" {
 					fmt.Println(strings.ToLower(line))
-				} else if operation == "cap" {
+				} else if operation == "3" {
 					nval := strings.Fields(line)
 					for i := 0; i <= len(nval)-1; i++ {
 						low := strings.ToLower(nval[i])
 						title := strings.ToUpper(string(low[0])) + string(low[1:])
 						fmt.Print(title, " ")
-						
 					}
-				} else if operation == "title" {
-					var small = []string{"a", "an", "the", "and", "but",
-						"or", "for", "nor", "on", "at", "to", "by", "in",
-						"of", "up", "as", "is", "it"}
-					nval := strings.Fields(line)
-					for i := 0; i <= len(nval)-1; i++ {
-						for j := 0; j <= len(small)-1; j++ {
-							
+				} else if operation == "4" {
+					var smallWords = []string{"a", "an", "the", "and", "but",
+						"or", "for", "nor", "on", "at", "to", "by",
+						"in", "of", "up", "as", "is", "it"}
+					words := strings.Fields(line)
+
+					for i, word := range words {
+						isSmall := slices.Contains(smallWords, strings.ToLower(word))
+						if i == 0 || !isSmall {
+							words[i] = strings.ToUpper(word[:1]) + strings.ToLower(word[1:])
+						} else {
+							words[i] = strings.ToLower(word)
 						}
 					}
-				} else {
-					fmt.Println("Invalid Operation! ")
+					fmt.Println(strings.Join(words, " "))
+				} else if operation == "5" {
+					line = strings.ToLower(line)
+					result := ""
+					for i := 0; i < len(line); i++ {
+						letter := line[i] >= 'a' && line[i] <= 'z'
+						digit := line[i] >= '0' && line[i] <= '9'
+						space := line[i] == ' '
+						if letter || digit {
+							result += string(line[i])
+						} else if space {
+							result += "_"
+						}
+					}
+					for strings.Contains(result, "__") {
+						result = strings.ReplaceAll(result, "__", "_")
+					}
+					result = strings.Trim(result, "_")
+					fmt.Println(result)
+				} else if operation == "6" {
+					words := strings.Fields(line)
+					for i := 0; i < len(words); i++ {
+						word := words[i]
+						for j := len(word) - 1; j >= 0; j-- {
+							fmt.Print(string(word[j]))
+						}
+						fmt.Print(" ")
+					}
+					fmt.Println()
 				}
 			} else {
 				fmt.Println("An error occured during scan")
@@ -78,12 +108,6 @@ func str() {
 		fmt.Println("An error occured while reading input!")
 	}
 }
-
-
-
-
-
-
 
 func cal() {
 start:
@@ -118,7 +142,6 @@ start:
 		return
 
 	}
-	
 
 	if option == "1" {
 		val, err := strconv.ParseInt(input, 16, 64)
@@ -156,7 +179,7 @@ start:
 
 }
 func runArithmeticCalculator() {
-	
+
 	fmt.Println("\n--- Arithmetic Calculator Menu ---")
 	fmt.Println("This is where the add, sub, div, mul, pow logic would go.")
 	fmt.Println("You would use fmt.Scan to read user input for operation and numbers.")
@@ -164,34 +187,29 @@ func runArithmeticCalculator() {
 }
 
 func main() {
-	for { 
+	for {
 		var mainOption string
 		fmt.Println("\n--- Main Menu ---")
 		fmt.Println("Select an application to run:")
 		fmt.Println("(C)converter: Number base conversions")
 		fmt.Println("(A)arithmetic: Basic math operations")
-		fmt.Println("(s)string converter")
+		fmt.Println("(S)string converter")
 		fmt.Println("(Q)uit: Exit the program")
 		fmt.Scan(&mainOption)
-		
-	
+
 		mainOption = strings.ToLower(mainOption)
 
 		if mainOption == "q" || mainOption == "quit" {
 			fmt.Println("Thanks for using the combined program. Goodbye!")
-			break 
+			break
 		} else if mainOption == "c" || mainOption == "converter" {
 			cal()
 		} else if mainOption == "a" || mainOption == "arithmetic" {
-			runArithmeticCalculator() 
-		} else if mainOption == "s" {
+			runArithmeticCalculator()
+		} else if mainOption == "s" || mainOption == "S" {
 			str()
-		}else {
+		} else {
 			fmt.Println("Invalid option. Please choose 'C', 'A', or 'Q'.")
 		}
 	}
 }
-
-
-
-
